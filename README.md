@@ -1,5 +1,7 @@
 # fluttery_demo
-Mobile app combining all the great UI challenges by Matthew Carroll (Fluttery)
+Mobile app combining all the great UI challenges by Matthew Carroll (Fluttery).
+
+Thanks for the great tutorials.
 
 ## Getting Started
 
