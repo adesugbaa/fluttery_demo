@@ -36,6 +36,16 @@ class _EggTimerScreenState extends State<EggTimerScreen> {
     );
   }
 
+  @override
+  void dispose() {
+    print('[ScreenTimer] dispose');
+    // eggTimer.pause();
+    eggTimer.dispose();
+    // eggTimer = null;
+
+    super.dispose();
+  }
+
   _onTimeSelected(Duration newTime) {
     setState(() {
       eggTimer.currentTime = newTime;
@@ -50,6 +60,7 @@ class _EggTimerScreenState extends State<EggTimerScreen> {
   }
 
   _onTimerUpdate() {
+    print('[ScreenTimer] _onTimerUpdate');
     setState(() { });
   }
 

@@ -50,6 +50,7 @@ class _EggTimerDialState extends State<EggTimerDial> with TickerProviderStateMix
 
   @override
   void dispose() {
+    print('[_EggTimerDialState] dispose');
     resetToZeroController.dispose();
     super.dispose();
   }

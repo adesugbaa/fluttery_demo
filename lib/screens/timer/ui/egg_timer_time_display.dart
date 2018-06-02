@@ -52,8 +52,10 @@ class _EggTimerTimeDisplayState extends State<EggTimerTimeDisplay> with TickerPr
 
   @override
   void dispose() {
+    print('[_EggTimerTimeDisplayState] dispose');
     selectionTimeSlideController.dispose();
     countdownTimeFadeController.dispose();
+
     super.dispose();
   }
 

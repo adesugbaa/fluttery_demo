@@ -8,6 +8,7 @@ class EggTimer {
   Duration _currentTime = const Duration(seconds: 0);
   Duration lastStartTime = const Duration(seconds: 0);
   EggTimerState state = EggTimerState.ready;
+  Timer mainTimer;
 
   EggTimer({
     this.maxTime,
@@ -25,6 +26,18 @@ class EggTimer {
     }
   }
 
+  dispose() {
+    print('[EggTimer] dispose');
+
+    if (mainTimer != null) {
+      mainTimer.cancel();
+    }
+
+    lastStartTime = const Duration(seconds: 0);
+    _currentTime = const Duration(seconds: 0);
+    stopwatch.stop();
+  }
+
   resume() {
     if (state != EggTimerState.running) {
       if (state == EggTimerState.ready) {
@@ -34,6 +47,10 @@ class EggTimer {
 
       state = EggTimerState.running;
       stopwatch.start();
+
+      if (mainTimer != null) {
+        mainTimer.cancel();
+      }
 
       _tick();
     }
@@ -49,10 +66,6 @@ class EggTimer {
     if (state == EggTimerState.running) {
       state = EggTimerState.paused;
       stopwatch.stop();
-
-      if (null != onTimerUpdate) {
-        onTimerUpdate();
-      }
     }
   }
 
@@ -62,6 +75,10 @@ class EggTimer {
       _currentTime = lastStartTime;
       stopwatch.reset();
       stopwatch.start();
+
+      if (mainTimer != null) {
+        mainTimer.cancel();
+      }
 
       _tick();
     }
@@ -80,17 +97,32 @@ class EggTimer {
     }
   }
 
-  _tick() {
-    print('Current time: ${_currentTime.inSeconds}');
+  _update(Timer t) {
     _currentTime = lastStartTime - stopwatch.elapsed;
 
     if (_currentTime.inSeconds > 0) {
-      Timer(const Duration(seconds: 1), _tick);
+      if (state != EggTimerState.running) {
+        print('Canceling Timer');
+        t.cancel();
+      } else {
+        print('Current time: ${_currentTime.inSeconds}');
+      }
     } else {
+      t.cancel();
       state = EggTimerState.ready;
     }
 
-    if (null != onTimerUpdate) {
+    if (null != onTimerUpdate && state == EggTimerState.running) {
+      onTimerUpdate();
+    }
+  }
+
+  _tick() {
+    mainTimer = Timer.periodic(const Duration(seconds: 1), _update);
+
+    if (null != onTimerUpdate && state == EggTimerState.running) {
+      _currentTime = lastStartTime - stopwatch.elapsed;
+      print('Current time: ${_currentTime.inSeconds}');
       onTimerUpdate();
     }
   }

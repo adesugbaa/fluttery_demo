@@ -50,8 +50,10 @@ class _EggTimerControlsState extends State<EggTimerControls> with TickerProvider
 
   @override
   void dispose() {
+    print('[_EggTimerControlsState] dispose');
     pauseResumeSlideController.dispose();
     restartResetFadeController.dispose();
+
     super.dispose();
   }
 
