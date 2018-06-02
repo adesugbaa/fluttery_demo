@@ -12,8 +12,11 @@ void main() async {
   final SharedPreferences prefs = await _prefs;
   var seenReveal = prefs.getBool('SEEN_REVEAL') ?? false;
 
-  // set 
+  // set light system 
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light); 
+
+  // lock orientation
+  await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
 
   runApp(
     MyApp(
