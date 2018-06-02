@@ -1,0 +1,34 @@
+PODS:
+  - Flutter (1.0.0)
+  - fluttery_audio (0.0.1):
+    - Flutter
+  - shared_preferences (0.0.1):
+    - Flutter
+  - url_launcher (0.0.1):
+    - Flutter
+
+DEPENDENCIES:
+  - Flutter (from `.symlinks/flutter/ios`)
+  - fluttery_audio (from `.symlinks/plugins/fluttery_audio/ios`)
+  - shared_preferences (from `.symlinks/plugins/shared_preferences/ios`)
+  - url_launcher (from `.symlinks/plugins/url_launcher/ios`)
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: ".symlinks/flutter/ios"
+  fluttery_audio:
+    :path: ".symlinks/plugins/fluttery_audio/ios"
+  shared_preferences:
+    :path: ".symlinks/plugins/shared_preferences/ios"
+  url_launcher:
+    :path: ".symlinks/plugins/url_launcher/ios"
+
+SPEC CHECKSUMS:
+  Flutter: 9d0fac939486c9aba2809b7982dfdbb47a7b0296
+  fluttery_audio: a7870e25e1781e1836ff74b215a64aeb66816415
+  shared_preferences: 5a1d487c427ee18fcd3ea1f2a131569481834b53
+  url_launcher: 92b89c1029a0373879933c21642958c874539095
+
+PODFILE CHECKSUM: 1e5af4103afd21ca5ead147d7b81d06f494f51a2
+
+COCOAPODS: 1.5.0
