@@ -183,6 +183,7 @@ class AboutScreenState extends State<AboutScreen> {
                   onPressed: () async {
                     final SharedPreferences prefs = await _prefs;
                     await prefs.setBool('SEEN_REVEAL', false);
+                    await prefs.setBool('SEEN_DISCOVERY', false);
                     await _confirm();
                   },
                 ),

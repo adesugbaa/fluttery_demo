@@ -1,8 +1,9 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:fluttery_demo/models/screen.dart';
-import 'package:fluttery_demo/screens/weather/ui/app_bar.dart';
-import 'package:fluttery_demo/ui/app_bar.dart';
 import 'package:fluttery_demo/widgets/feature_discovery.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 
 
@@ -18,6 +19,36 @@ class Content extends StatefulWidget {
 }
 
 class _ContentState extends State<Content> {
+  Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
+  bool _seenDiscovery = true;
+
+  @override
+  void initState() {
+    super.initState();
+
+    Timer(const Duration(seconds: 1), () {
+      openDiscovery(context);
+    });
+  }
+
+  void openDiscovery(BuildContext context) async {
+    final SharedPreferences prefs = await _prefs;
+
+    setState(() {
+      _seenDiscovery = prefs.getBool('SEEN_DISCOVERY') ?? false;
+    });
+
+    if (!_seenDiscovery) {
+      setState(() {
+        _seenDiscovery = true;
+      });
+      
+      await prefs.setBool('SEEN_DISCOVERY', true);
+      FeatureDiscovery
+        .discoverFeatures(context, [feature1, feature2, feature3, feature4]);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -114,9 +145,9 @@ class DiscoveryScreen extends StatefulWidget {
 
 class _DiscoveryScreenState extends State<DiscoveryScreen> {
 
-
   @override
   Widget build(BuildContext context) {
+
     return FeatureDiscovery(
       child: Scaffold(
         appBar: AppBar(
