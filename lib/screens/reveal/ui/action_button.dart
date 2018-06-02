@@ -14,25 +14,32 @@ class ActionButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Positioned(
-      bottom: 16.0,
-      right: 16.0,
-      child: Container(
-        decoration: BoxDecoration(
-          border: Border.all(width: 1.0, color: Colors.white)
-        ),
-        child: FlatButton(
-          onPressed: onTapped,
-          //color: Colors.white,
-          child: Text(
-            activeIndex == (numPages - 1) ? 'PROCEED' : 'SKIP',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 14.0,
-              fontWeight: FontWeight.bold
+    return SafeArea(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          Expanded(child: Container()),
+          Padding(
+            padding: const EdgeInsets.only(bottom: 16.0, right: 16.0),
+            child: Container(
+              decoration: BoxDecoration(
+                border: Border.all(width: 1.0, color: Colors.white)
+              ),
+              child: FlatButton(
+                onPressed: onTapped,
+                //color: Colors.white,
+                child: Text(
+                  activeIndex == (numPages - 1) ? 'PROCEED' : 'SKIP',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 14.0,
+                    fontWeight: FontWeight.bold
+                  ),
+                ),
+              ),
             ),
           ),
-        ),
+        ],
       ),
     );
   }

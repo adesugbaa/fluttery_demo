@@ -79,7 +79,7 @@ class _EggTimerTimeDisplayState extends State<EggTimerTimeDisplay> with TickerPr
     }
 
     return Padding(
-      padding: const EdgeInsets.only(top: 10.0),
+      padding: const EdgeInsets.only(top: 30.0),
       child: Stack(
         alignment: Alignment.center,
         children: [
@@ -95,7 +95,7 @@ class _EggTimerTimeDisplayState extends State<EggTimerTimeDisplay> with TickerPr
               style: const TextStyle(
                 color: Colors.black,
                 fontFamily: 'bebas-neue',
-                fontSize: 150.0,
+                fontSize: 120.0,
                 fontWeight: FontWeight.bold,
                 letterSpacing: 10.0,
               ),
@@ -109,7 +109,7 @@ class _EggTimerTimeDisplayState extends State<EggTimerTimeDisplay> with TickerPr
               style: const TextStyle(
                 color: Colors.black,
                 fontFamily: 'bebas-neue',
-                fontSize: 150.0,
+                fontSize: 120.0,
                 fontWeight: FontWeight.bold,
                 letterSpacing: 10.0,
               ),
