@@ -103,13 +103,13 @@ class _MenuScreenState extends State<MenuScreen> with TickerProviderStateMixin {
         maxWidth: double.infinity,
         alignment: Alignment.topLeft,
         child: Padding(
-          padding: const EdgeInsets.all(30.0),
+          padding: const EdgeInsets.all(10.0),
           child: Text(
             'Menu',
             style: TextStyle(
               color: const Color(0x88444444),
               fontFamily: 'mermaid',
-              fontSize: 240.0,
+              fontSize: 180.0,
             ),
             textAlign: TextAlign.left,
             softWrap: false,
@@ -119,7 +119,7 @@ class _MenuScreenState extends State<MenuScreen> with TickerProviderStateMixin {
       builder: (context, child) {
         return Transform(
           transform: Matrix4.translationValues(
-            250.0 * (1.0 - _titleAnimationController.value) - 100.0,
+            300.0 * (1.0 - _titleAnimationController.value) - 60.0,
             0.0,
             0.0
           ),
@@ -164,7 +164,7 @@ class _MenuScreenState extends State<MenuScreen> with TickerProviderStateMixin {
     }
 
     return Transform(
-      transform: Matrix4.translationValues(0.0, 225.0, 0.0),
+      transform: Matrix4.translationValues(0.0, 160.0, 0.0),
       child: Column(
         children: listItems
       ),
