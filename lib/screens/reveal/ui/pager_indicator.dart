@@ -71,7 +71,7 @@ class PagerIndicator extends StatelessWidget {
           ),
 
           SizedBox(
-            height: 44.0,
+            height: 88.0,
           ),
         ]
       ),

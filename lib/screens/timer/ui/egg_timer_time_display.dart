@@ -79,7 +79,7 @@ class _EggTimerTimeDisplayState extends State<EggTimerTimeDisplay> with TickerPr
     }
 
     return Padding(
-      padding: const EdgeInsets.only(top: 80.0),
+      padding: const EdgeInsets.only(top: 10.0),
       child: Stack(
         alignment: Alignment.center,
         children: [

@@ -15,7 +15,7 @@ class ActionButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Positioned(
-      bottom: 44.0,
+      bottom: 16.0,
       right: 16.0,
       child: Container(
         decoration: BoxDecoration(
