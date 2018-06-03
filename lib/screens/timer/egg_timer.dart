@@ -100,7 +100,7 @@ class EggTimer {
   _update(Timer t) {
     _currentTime = lastStartTime - stopwatch.elapsed;
 
-    if (_currentTime.inSeconds > 0) {
+    if (_currentTime != null && _currentTime.inSeconds > 0) {
       if (state != EggTimerState.running) {
         print('Canceling Timer');
         t.cancel();
@@ -122,7 +122,7 @@ class EggTimer {
 
     if (null != onTimerUpdate && state == EggTimerState.running) {
       _currentTime = lastStartTime - stopwatch.elapsed;
-      print('Current time: ${_currentTime.inSeconds}');
+      //print('Current time: ${_currentTime.inSeconds}');
       onTimerUpdate();
     }
   }

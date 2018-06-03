@@ -55,11 +55,11 @@ class _ContentState extends State<Content> {
       children: <Widget>[
         Column(
           children: <Widget>[
-            Image.network(
-              'https://www.balboaisland.com/wp-content/uploads/Starbucks-Balboa-Island-01.jpg',
+            Image.asset(
+              'assets/images/starbucks2.jpg',
               fit: BoxFit.cover,
               width: double.infinity,
-              height: 200.0,
+              height: 240.0,
             ),
             Container(
                 width: double.infinity,
@@ -100,7 +100,7 @@ class _ContentState extends State<Content> {
           ],
         ),
         Positioned(
-            top: 200.0,
+            top: 240.0,
             right: 0.0,
             child: FractionalTranslation(
               translation: const Offset(-0.5, -0.5),

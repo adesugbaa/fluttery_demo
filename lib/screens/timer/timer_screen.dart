@@ -60,8 +60,10 @@ class _EggTimerScreenState extends State<EggTimerScreen> {
   }
 
   _onTimerUpdate() {
-    print('[ScreenTimer] _onTimerUpdate');
-    setState(() { });
+    
+    if (this.mounted) {
+      setState(() { });
+    }
   }
 
   @override
