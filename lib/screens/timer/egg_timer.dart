@@ -109,9 +109,13 @@ class EggTimer {
       }
     } else {
       t.cancel();
-      state = EggTimerState.ready;
+      
       stopwatch.stop();
       stopwatch.reset();
+      _currentTime = const Duration(seconds: 0);
+      lastStartTime = _currentTime;
+
+      state = EggTimerState.ready;
     }
 
     if (null != onTimerUpdate) {
