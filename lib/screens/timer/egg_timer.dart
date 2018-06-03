@@ -110,9 +110,11 @@ class EggTimer {
     } else {
       t.cancel();
       state = EggTimerState.ready;
+      stopwatch.stop();
+      stopwatch.reset();
     }
 
-    if (null != onTimerUpdate && state == EggTimerState.running) {
+    if (null != onTimerUpdate) {
       onTimerUpdate();
     }
   }
@@ -120,7 +122,7 @@ class EggTimer {
   _tick() {
     mainTimer = Timer.periodic(const Duration(seconds: 1), _update);
 
-    if (null != onTimerUpdate && state == EggTimerState.running) {
+    if (null != onTimerUpdate) {
       _currentTime = lastStartTime - stopwatch.elapsed;
       //print('Current time: ${_currentTime.inSeconds}');
       onTimerUpdate();
