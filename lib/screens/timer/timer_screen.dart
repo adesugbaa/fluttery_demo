@@ -38,7 +38,7 @@ class _EggTimerScreenState extends State<EggTimerScreen> {
 
   @override
   void dispose() {
-    print('[ScreenTimer] dispose');
+    // print('[ScreenTimer] dispose');
     // eggTimer.pause();
     eggTimer.dispose();
     // eggTimer = null;

@@ -95,7 +95,7 @@ class _CardFlipperState extends State<CardFlipper> with TickerProviderStateMixin
     // Model matrix by first translating the object from the origin of the world
     // by radius in the z axis and then rotating against the world.
     final rotationPointMultiplier = angle > 0.0 ? angle / angle.abs() : 1.0;
-    //print('Angle: $angle');
+    // print('Angle: $angle');
     projection *= Matrix4.translationValues(
       horizontalTranslation + (rotationPointMultiplier * 300.0), 0.0, 0.0) *
         Matrix4.rotationY(angle) *

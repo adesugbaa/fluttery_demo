@@ -124,12 +124,10 @@ class _ZoomScaffoldState extends State<ZoomScaffold> with TickerProviderStateMix
 
   bool get _menuOpen {
     final AnimationStatus status = _controller.status;
-    print('[_ZoomScaffoldState] Status: $status');
     return status == AnimationStatus.completed || status == AnimationStatus.forward;
   }
 
   void toggleMenuVisibility() {
-    print('[_ZoomScaffoldState] toggleMenuVisibility');
     _controller.fling(velocity: _menuOpen? -2.0 : 2.0);
     _menuController.toggle();
   }

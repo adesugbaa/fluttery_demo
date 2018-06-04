@@ -97,7 +97,6 @@ class _WeatherScreenState extends State<WeatherScreen> with TickerProviderStateM
               week: week,
               onRefreshed: () {},
               onDaySelected: (index) {
-                print('${week[index]} selected');
                 setState(() {
                   currentIndex = index;
                 });

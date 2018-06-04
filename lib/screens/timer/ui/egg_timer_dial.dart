@@ -50,7 +50,7 @@ class _EggTimerDialState extends State<EggTimerDial> with TickerProviderStateMix
 
   @override
   void dispose() {
-    print('[_EggTimerDialState] dispose');
+    // print('[_EggTimerDialState] dispose');
     resetToZeroController.dispose();
     super.dispose();
   }
@@ -178,7 +178,7 @@ class _DialTurnGestureDetectorState extends State<DialTurnGestureDetector> {
       final anglePercent = angleDiff / (2 * pi);
       final timeDiffInSeconds = (anglePercent * widget.maxTime.inSeconds).round();
       selectedTime = Duration(seconds: startDragTime.inSeconds + timeDiffInSeconds);
-      print('time: ${selectedTime.inMinutes}');
+      // print('time: ${selectedTime.inMinutes}');
 
       widget.onTimeSelected(selectedTime);
     }

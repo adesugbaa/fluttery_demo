@@ -27,7 +27,7 @@ class EggTimer {
   }
 
   dispose() {
-    print('[EggTimer] dispose');
+    // print('[EggTimer] dispose');
 
     if (mainTimer != null) {
       mainTimer.cancel();
@@ -102,10 +102,10 @@ class EggTimer {
 
     if (_currentTime != null && _currentTime.inSeconds > 0) {
       if (state != EggTimerState.running) {
-        print('Canceling Timer');
+        // print('Canceling Timer');
         t.cancel();
       } else {
-        print('Current time: ${_currentTime.inSeconds}');
+        // print('Current time: ${_currentTime.inSeconds}');
       }
     } else {
       t.cancel();
@@ -128,7 +128,7 @@ class EggTimer {
 
     if (null != onTimerUpdate) {
       _currentTime = lastStartTime - stopwatch.elapsed;
-      //print('Current time: ${_currentTime.inSeconds}');
+      // print('Current time: ${_currentTime.inSeconds}');
       onTimerUpdate();
     }
   }

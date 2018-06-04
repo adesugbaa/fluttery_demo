@@ -47,7 +47,7 @@ class _AppRootState extends State<AppRoot> {
   }
 
   void _onMenuSelected(menuId) {
-    print('Menu Callback => $menuId clicked');
+    // print('Menu Callback => $menuId clicked');
     MenuItem menuItem = menu.items.firstWhere((item) => item.id == menuId);
 
     setState(() {

@@ -80,7 +80,6 @@ class ForecastAppBarState extends State<ForecastAppBar> {
             size: 35.0
           ),
           onPressed: () {
-            print('here');
             widget.onOpenDrawerTapped();
           },
         )

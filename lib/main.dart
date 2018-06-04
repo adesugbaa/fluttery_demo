@@ -56,7 +56,6 @@ class Starter extends StatelessWidget {
   Starter(this.seenReveal);
 
   void _openApp(context) async {
-    print('Open app: $context');
     final SharedPreferences prefs = await _prefs;
     await prefs.setBool('SEEN_REVEAL', true);
 
